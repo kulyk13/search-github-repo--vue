@@ -5,7 +5,9 @@
   position: relative;
   font-size: 16px;
   border-radius: 10px;
+  background-color: #fff;
   box-shadow: $shadow_color 4px 6px 15px -1px;
+  margin-bottom: 30px;
 
   &__top {
     display: flex;
@@ -27,6 +29,7 @@
     margin-left: 20px;
     padding-top: 10px;
     padding-bottom: 20px;
+    width: 40%;
 
     &-list {
       margin-bottom: 20px;
@@ -37,6 +40,10 @@
         margin-bottom: 10px;
       }
     }
+
+    &-btn {
+      width: 150px;
+    }
   }
 
   &__description {
@@ -44,12 +51,11 @@
   }
 
   &__link {
-    padding: 0;
+    padding: 0 0 5px 0;
     margin-bottom: 15px;
     font-size: 20px;
     color: $btn_color;
     border-bottom: 2px solid transparent;
-    padding-bottom: 5px;
 
     &:hover {
       border-bottom: 2px solid $btn_color;

@@ -2,6 +2,7 @@
 
 .header {
   padding-top: 50px;
+  margin-bottom: 20px;
 
   &__cta {
     display: flex;
@@ -20,7 +21,7 @@
       border: 1px solid $btn_color;
       border-radius: 5px;
       outline-color: $btn_color;
-      width: 70%;
+      width: 100%;
     }
 
     &-btn {
@@ -36,8 +37,20 @@
   }
 }
 
+.main {
+  background-image: url("../../assets/images/GitHub-Logo.webp");
+
+  &.height {
+    height: 100vh;
+  }
+
+  &.fullheight {
+    height: 100%;
+  }
+}
+
 .hero {
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .card-list {

@@ -5,6 +5,7 @@
     </div>
   </header>
   <main class="main">
+<!--      :class="{'height' : cardData.length < 3, 'heightfull' : cardData.length >= 3}"-->
     <section class="hero">
       <ul class="card-list">
 

@@ -1,17 +1,28 @@
 <template>
   <li class="card">
     <div class="card__top">
-      <a href="#" class="card__img-link">
-        <slot name="userAvatar">
-          <img src="https://www.fillmurray.com/640/360" alt="User avatar" class="card__img" width="1" height="1" loading="lazy">
-        </slot>
-      </a>
+      <slot name="userAvatar">
+        <a href="#" class="card__img-link">
+          <img
+              src="https://www.fillmurray.com/640/360"
+              alt="User avatar"
+              class="card__img"
+              width="1"
+              height="1"
+              loading="lazy"
+          >
+        </a>
+      </slot>
       <div class="card__info">
         <slot name="userInfo">
-          <a href="#" target="_blank" class="card__link">
-            <slot name="userName">User name</slot>
+          <a
+              href="#"
+              target="_blank"
+              class="card__link"
+          >
+            User name
             &nbsp;<span> • </span>&nbsp;
-            <slot name="userLogin">User login</slot>
+            User login
           </a>
         </slot>
         <p class="card__description">
@@ -28,10 +39,19 @@
             Public repositories: <slot name="repositories">0</slot>
           </li>
         </ul>
-        <slot>
-          <a href="#" target="_blank" class="btn">Go to repository</a>
+        <slot name="userRepo">
+          <a
+              href="#"
+              target="_blank"
+              class="btn card__info-btn"
+          >
+            Go to repository
+          </a>
         </slot>
-        <button type="button" class="card__btn">
+        <button
+            type="button"
+            class="card__btn"
+        >
           <svg xmlns="http://www.w3.org/2000/svg"
                width="32.000000pt" height="32.000000pt" viewBox="0 0 20.000000 10.000000">
             <g transform="translate(0.000000,16.000000) scale(0.03,-0.03)"
