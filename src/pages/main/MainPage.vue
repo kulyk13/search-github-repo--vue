@@ -9,6 +9,7 @@
         >
           <input
               v-model="value"
+              @input="getData(value)"
               type="text"
               id="searchInput"
               name="search"
@@ -18,7 +19,7 @@
           >
           <br>
           <button
-              id="searchBtn"
+              @submit="getData(value)"
               type="submit"
               class="btn header__form-btn"
           >
@@ -36,19 +37,40 @@
   </header>
   <main class="main">
     <section class="hero">
-      <ul class="card-list">
-
-      </ul>
+      <div class="hero-wrap container">
+        <div class="hero-space"></div>
+        <ul class="card-list">
+          <RepoCard></RepoCard>
+        </ul>
+      </div>
     </section>
   </main>
 </template>
 
 <script>
+import RepoCard from "@/components/RepoCard";
 export default {
   name: "MainPage",
+  components: {
+    RepoCard
+  },
   data() {
     return {
       value: '',
+      cardData: [
+
+      ]
+    }
+  },
+  methods: {
+    async getData(login) {
+      return await fetch(`https://api.github.com/users/${login}`)
+          .then(res => res.json())
+          .then(res => {
+            // this.cardData.unshift(JSON.stringify(res));
+            this.cardData.unshift(res);
+            console.log(this.cardData)
+          })
     }
   }
 }

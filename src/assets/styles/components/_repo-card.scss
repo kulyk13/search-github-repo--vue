@@ -1,0 +1,93 @@
+@import "../variables";
+
+.card {
+  width: 50%;
+  position: relative;
+  font-size: 16px;
+  border-radius: 10px;
+  box-shadow: $shadow_color 4px 6px 15px -1px;
+
+  &__top {
+    display: flex;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 0 0 0;
+
+    &-link {
+      width: 40%;
+      padding: 0;
+      border-radius: 10px 0 0 0;
+    }
+  }
+
+  &__info {
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+    &-list {
+      margin-bottom: 20px;
+    }
+
+    &-item {
+      &:nth-last-child(n + 2) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__description {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: $btn_color;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+
+    &:hover {
+      border-bottom: 2px solid $btn_color;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    border-radius: 5px;
+    padding: 0 4px 7px 5px;
+    top: 10px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: #b5b4b4;
+
+    &:hover {
+      svg {
+        g {
+          fill: gold;
+        }
+      }
+    }
+
+    svg {
+      margin-top: -3px;
+
+      g {
+        transition: 0.3s;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 10px;
+    background-color: #d6d1d1;
+    border-radius: 0 0 10px 10px;
+  }
+}
