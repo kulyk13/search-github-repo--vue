@@ -89,6 +89,14 @@
         transition: 0.3s;
       }
     }
+
+    &.active {
+      svg {
+        g {
+          fill: gold;
+        }
+      }
+    }
   }
 
   &__footer {
