@@ -113,8 +113,6 @@ export default {
     },
   },
   mounted() {
-    console.log(this.recentList)
-    console.log(this.wishlist)
     this.cardData = this.wishlist.reduce((acc, curr) => {
       return [...acc, this.recentList.find(repo => repo.login === curr)]
     }, [])

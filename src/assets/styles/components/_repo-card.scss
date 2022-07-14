@@ -25,6 +25,25 @@
     }
   }
 
+  &__link {
+    align-items: center;
+    padding: 0 0 5px 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: $btn_color;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      border-bottom: 2px solid $btn_color;
+    }
+
+    &.card__link--not-underline {
+      &:hover {
+        border-bottom: 2px solid transparent;
+      }
+    }
+  }
+
   &__info {
     margin-left: 20px;
     padding-top: 10px;
@@ -48,18 +67,6 @@
 
   &__description {
     margin-bottom: 20px;
-  }
-
-  &__link {
-    padding: 0 0 5px 0;
-    margin-bottom: 15px;
-    font-size: 20px;
-    color: $btn_color;
-    border-bottom: 2px solid transparent;
-
-    &:hover {
-      border-bottom: 2px solid $btn_color;
-    }
   }
 
   &__btn {

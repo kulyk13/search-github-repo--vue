@@ -7,6 +7,7 @@
             action="#"
             class="header__form"
         >
+          <!--@change="login !== '' ? getData(login) : ''"-->
           <input
               v-model="login"
               @input="login !== '' ? getData(login) : ''"
@@ -42,7 +43,10 @@
               v-for="(card, idx) in cardData"
               :key="idx"
           >
-            <template #userAvatar>
+            <template
+                #userAvatar
+                v-if="card.avatar_url"
+            >
               <a :href="card.html_url"
                  target="_blank"
                  class="card__img-link"
@@ -57,26 +61,44 @@
                 >
               </a>
             </template>
-            <template #userInfo>
+            <template
+                #userInfo
+                v-if="card.login"
+            >
               <a :href="card.html_url" target="_blank" class="card__link">
                 {{ card.name ?? 'Name is missing' }}
                 &nbsp;<span> • </span>&nbsp;
-                {{ card.login ?? '' }}
+                {{ card.login }}
               </a>
             </template>
-            <template #userBio>
+            <template
+                #userBio
+                v-if="card.bio"
+            >
               {{ card.bio }}
             </template>
-            <template #followers>
+            <template
+                #followers
+                v-if="card.followers"
+            >
               {{ card.followers }}
             </template>
-            <template #following>
+            <template
+                #following
+                v-if="card.following"
+            >
               {{ card.following }}
             </template>
-            <template #repositories>
+            <template
+                #repositories
+                v-if="card.public_repos"
+            >
               {{ card.public_repos }}
             </template>
-            <template #userRepo>
+            <template
+                #userRepo
+                v-if="card.html_url"
+            >
               <a
                   :href="card.html_url + '?tab=repositories'"
                   target="_blank"
@@ -85,7 +107,10 @@
                 Go to repository
               </a>
             </template>
-            <template #wishBtn>
+            <template
+                #wishBtn
+                v-if="card.login"
+            >
               <button
                   @click="addToWishlist(card.login)"
                   type="button"
