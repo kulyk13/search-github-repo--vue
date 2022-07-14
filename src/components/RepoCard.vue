@@ -17,7 +17,7 @@
       <div class="card__info">
         <slot name="userInfo">
           <p class="card__link card__link--not-underline" >
-            User doesn't exist
+            User {{ login }} doesn't exist
           </p>
         </slot>
         <p class="card__description">
@@ -49,6 +49,9 @@
 <script>
 export default {
   name: "RepoCard",
+  props: {
+    login: String,
+  }
 }
 </script>
 

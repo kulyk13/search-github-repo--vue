@@ -42,6 +42,7 @@
           <RepoCard
               v-for="(card, idx) in cardData"
               :key="idx"
+              :login="login"
           >
             <template
                 #userAvatar
