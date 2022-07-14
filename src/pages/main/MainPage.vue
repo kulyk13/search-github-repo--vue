@@ -147,10 +147,14 @@ export default {
     },
   },
   mounted() {
-    if (localStorage.wishlist) {
+    if (!localStorage.wishlist) {
+      localStorage.wishlist = JSON.stringify([])
+    } else if (localStorage.wishlist) {
       this.wishlist = JSON.parse(localStorage.wishlist);
     }
-    if (localStorage.recentList) {
+    if (!localStorage.recentList) {
+      localStorage.recentList = JSON.stringify([])
+    } else if (localStorage.recentList) {
       this.recentList = JSON.parse(localStorage.recentList);
     }
   },
